@@ -63,12 +63,14 @@ Version: 1.0.7
                                 cloneHeaderRow(obj);
                                 copiedHeader = true;
                             }
+                            obj.container.css('left', (window.pageXOffset * -1) + obj.grid.offset().left);
                         }
                         else {
 
                             if (($(document).scrollTop() > obj.header.offset().top)) {
                                 obj.container.css("position", "absolute");
                                 obj.container.css("top", (obj.grid.find("tr:last").offset().top - obj.header.height()) + "px");
+                                obj.container.css('left', (window.pageXOffset * -1) + obj.grid.offset().left);
                             }
                             else {
                                 obj.container.css("visibility", "hidden");
